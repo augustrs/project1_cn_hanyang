@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",  // Include files in your workspace
+                "${workspaceFolder}/include",  // Add this if you have a local include directory
+                "/Library/Developer/CommandLineTools/usr/include/c++/v1",  // C++ headers
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"  // System headers
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"  // macOS frameworks
+            ],
+            "compilerPath": "/usr/bin/clang",  // Default Clang compiler
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
