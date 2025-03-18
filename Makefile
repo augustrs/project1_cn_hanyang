@@ -1,19 +1,12 @@
-CC = g++
-CFLAGS = -Wall -std=c++11 -pthread
-TARGET = myserver
-SRCS = server.cpp
-OBJS = $(SRCS:.cpp=.o)
+CC = gcc                   # Compiler
+CFLAGS = -Wall -Wextra     # Compiler flags (show warnings)
+TARGET = myserver          # Output executable name
+SRC = server.c             # Source file(s)
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
-    $(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
-
-%.o: %.cpp
-    $(CC) $(CFLAGS) -c $< -o $@
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-    rm -f $(OBJS) $(TARGET)
-
-run: $(TARGET)
-    ./$(TARGET) 8080
+	rm -f $(TARGET)
