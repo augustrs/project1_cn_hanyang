@@ -11,5 +11,23 @@ int main(int argc, char *argv[]) {
     printf("First argument: %s\n", argv[0]);
     printf("Second argument: %s\n", argv[1]);
 
+
+    int port = 8080; //change to be defined by user
+
 return 0;
+}
+
+int socket() {
+    int server_socket = socket(AF_INET, SOCK_STREAM,  0); // Creates socket using ipv4, tcp and default protocol
+    if (server_socket == -1) {
+        printf("Failed to create socket\n");
+        exit(EXIT_FAILURE);
+    }
+}
+
+int bind(int server_socket, int port) {
+struct sockaddr_in server_address;
+server_address.sin_family = AF_INET; // ipv4
+server_address.sin_addr.s_addr = INADDR_ANY; // listen to any address (all interfaces)
+server_address.sin_port = htons(port); // 
 }
